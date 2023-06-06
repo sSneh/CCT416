@@ -61,12 +61,8 @@ def clean_tweet(tweet):
         if not token.isdigit() and token not in string.punctuation
     ]
 
-
     # remove stop words
     tokens = [token for token in tokens if token not in stop_words]
-
-    #remove the remainder of &
-    tokens = [token for token in tokens if token != 'amp']
 
     #remove slang (other than ai)
     tokens = [token for token in tokens if token not in slangdict.keys()]
