@@ -1,0 +1,9 @@
+Sentiment,Count
+Positive,387
+Negative,336
+Neutral,101
+
+VADER Statistic,Value
+Positive Score (avg),0.15186286407766983
+Negative Score (avg),0.13994053398058262
+Neutral Score (avg),0.7081990291262131
