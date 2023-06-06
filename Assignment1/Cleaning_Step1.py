@@ -40,7 +40,7 @@ for row in data:
 
     if not tweet.startswith("RT "):
         # check if we've seen this tweet before
-        if cleaned_tweet not in seen_tweets:
+        if cleaned_tweet not in seen_tweets and "ai" in cleaned_tweet.lower():
             # mark this tweet as seen
             seen_tweets.add(cleaned_tweet)
 
