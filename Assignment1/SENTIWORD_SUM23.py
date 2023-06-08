@@ -4,7 +4,7 @@ from nltk.corpus import sentiwordnet as swn
 import matplotlib.pyplot as plt
 
 # Open the CSV file and read in the cleaned texts
-with open('inputs/Cleaned_Step2.csv', 'r') as file:
+with open('inputs/OG_Cleaned2.csv', 'r') as file:
     reader = csv.reader(file)
     tweets = [row[6] for row in reader]
 
