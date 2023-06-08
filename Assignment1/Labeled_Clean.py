@@ -27,13 +27,6 @@ def label_tweet(tweet, OG_Tweet):
         label = 'neutral'
 
     score_totals[label] += 1
-    scores.pop('compound')
-    greatest_score = max(scores, key=scores.get)
-    
-    # # if compound_score >= 0.1:
-    # if label == 'positive':
-    #print("\n\n-", OG_Tweet,"\n", tweet, "-->", compound_score, label, scores)
-    
 
     return label
 

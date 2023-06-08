@@ -47,9 +47,6 @@ def clean_tweet(tweet):
     # remove stop words
     tokens = [token for token in tokens if token.lower() not in stop_words]
 
-    # remove slang (other than ai)
-    # tokens = [token for token in tokens if token in slangdict.keys()]
-
     # lemmatize the tokens
     tokens = [lemmatizer.lemmatize(token) for token in tokens]
     #print(tokens)

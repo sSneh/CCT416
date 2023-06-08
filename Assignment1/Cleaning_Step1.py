@@ -40,18 +40,13 @@ for row in data:
     cleaned_tweet = cleaned_tweet.replace("#", "")
 
     if not tweet.startswith("RT "):
-        # check if we've seen this tweet before and contains any one term of "ai", "ip", "cgi"
+        # check if we've seen this tweet before and contains any one term of "ai", "ip", "cgi". Also rejects anything with wga/sag (writers strike)
         if cleaned_tweet not in seen_tweets and re.search(r'\b(ai|ip|cgi|a\.i)\b', cleaned_tweet.lower()) != None and re.search(r'\b(wga|sag)\b', cleaned_tweet.lower()) == None:
             # mark this tweet as seen
             seen_tweets.add(cleaned_tweet)
 
             # append the cleaned tweet to the cleaned_tweets list
             cleaned_tweets.append(cleaned_tweet)
-            #print("->",cleaned_tweet)
-        # if re.search(r'(#(\w+) *){1,}', cleaned_tweet) != None:
-        # if not (re.search(r'\b(ai|ip|cgi|a\.i)\b', cleaned_tweet.lower()) != None):
-            # if 'artificial' in cleaned_tweet.lower():
-            #     print("->",cleaned_tweet)
 
 print("Number of Cleaned tweets:", len(cleaned_tweets))
 
