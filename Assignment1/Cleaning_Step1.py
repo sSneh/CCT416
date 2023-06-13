@@ -24,13 +24,13 @@ for row in data:
     # extract the tweet
     tweet = row[3]
 
-    #same options as default but keeps hastags
-    p.set_options(p.OPT.URL, p.OPT.MENTION, p.OPT.RESERVED, p.OPT.EMOJI, p.OPT.SMILEY, p.OPT.NUMBER)
+    #same options as default but keeps hashtags
+    p.set_options(p.OPT.URL, p.OPT.MENTION, p.OPT.EMOJI, p.OPT.SMILEY, p.OPT.NUMBER)
    
     # clean the tweet and remove numbers
     cleaned_tweet = re.sub(r'\d+', '', p.clean(tweet))
 
-    # remove hastags 2 in a row
+    # remove hastags 2 or more in a row
     cleaned_tweet = re.sub(r'(#(\w+) *){2,}', '', cleaned_tweet)
 
     # remove hastags at the end of a tweet (only after punctuation)
@@ -47,6 +47,8 @@ for row in data:
 
             # append the cleaned tweet to the cleaned_tweets list
             cleaned_tweets.append(cleaned_tweet)
+
+        
 
 print("Number of Cleaned tweets:", len(cleaned_tweets))
 
